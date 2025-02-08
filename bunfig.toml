@@ -1,0 +1,17 @@
+# Reduce memory usage at the cost of performance
+smol = true
+
+[install]
+optional = true
+dev = true
+peer = true
+production = false
+exact = false
+saveTextLockfile = true
+auto = "auto"
+
+[install.lockfile]
+save = true
+# Whether to save a non-Bun lockfile alongside bun.lockb
+# Only "yarn" is supported
+print = "yarn"
