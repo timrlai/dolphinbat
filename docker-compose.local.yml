@@ -1,7 +1,7 @@
 volumes:
   dolphinbat_local_postgres_data: {}
   dolphinbat_local_postgres_data_backups: {}
-  
+
 
 services:
   django:
