@@ -4,7 +4,7 @@ version = "0.0.1"
 dependencies = [
     "python-slugify==8.0.4",
     "pillow==11.1.0",
-    "rcssmin==1.1.2",
+    "rcssmin==1.2.0",
     "argon2-cffi==23.1.0",
     "whitenoise==6.9.0",
     "redis==5.2.1",
