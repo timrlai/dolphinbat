@@ -2,6 +2,19 @@
   "name": "dolphinbat",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "eslint --max-warnings 0 . --fix",
+    "format": "prettier --write './*.{ts,mts,js,mjs,cjs,sass,scss,css,json}' './**/*.{ts,mts,js,mjs,cjs,sass,scss,css,json}' --ignore-unknown",
+    "format:check": "prettier --check './*.{ts,mts,js,mjs,cjs,sass,scss,css,json}' './**/*.{ts,mts,js,mjs,cjs,sass,scss,css,json}' --ignore-unknown",
+    "check": "bun run lint && bun run format:check"
+  },
+  "lint-staged": {
+    "**/*": [
+      "bun run lint",
+      "bun run format"
+    ]
+  },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "@types/bun": "latest",
