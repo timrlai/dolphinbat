@@ -1,4 +1,4 @@
-exclude: '^docs/|/migrations/|devcontainer.json'
+exclude: "^docs/|/migrations/|devcontainer.json"
 default_stages: [pre-commit]
 minimum_pre_commit_version: "3.2.0"
 
@@ -22,10 +22,10 @@ repos:
       - id: detect-private-key
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: '1.22.2'
+    rev: "1.22.2"
     hooks:
       - id: django-upgrade
-        args: ['--target-version', '5.0']
+        args: ["--target-version", "5.0"]
 
   # Run the Ruff linter.
   - repo: https://github.com/astral-sh/ruff-pre-commit
@@ -42,6 +42,13 @@ repos:
     hooks:
       - id: djlint-reformat-django
       - id: djlint-django
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    # uv version.
+    rev: 0.4.15
+    hooks:
+      - id: uv-export
+        args: ["--frozen", "--no-dev"]
 
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 ci:

@@ -7,12 +7,12 @@ env:
 
 on:
   pull_request:
-    branches: ['master', 'main']
-    paths-ignore: ['docs/**']
+    branches: ["master", "main"]
+    paths-ignore: ["docs/**"]
 
   push:
-    branches: ['master', 'main']
-    paths-ignore: ['docs/**']
+    branches: ["master", "main"]
+    paths-ignore: ["docs/**"]
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
@@ -25,12 +25,12 @@ jobs:
       - name: Checkout Code Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v2
         with:
-          python-version-file: '.python-version'
-      - name: Run pre-commit
-        uses: pre-commit/action@v3.0.1
+          enable-cache: "true"
+      - name: Install dependencies
+        run: uv sync
 
   # With no caching at all the entire ci process takes 3m to complete!
   pytest:
@@ -47,10 +47,10 @@ jobs:
         run: docker compose -f docker-compose.docs.yml build docs
 
       - name: Check DB Migrations
-        run: docker compose -f docker-compose.local.yml run --rm django python manage.py makemigrations --check
+        run: docker compose -f docker-compose.local.yml run --rm django uv run python manage.py makemigrations --check
 
       - name: Run DB Migrations
-        run: docker compose -f docker-compose.local.yml run --rm django python manage.py migrate
+        run: docker compose -f docker-compose.local.yml run --rm django uv run python manage.py migrate
 
       - name: Run Django Tests
         run: docker compose -f docker-compose.local.yml run django pytest
