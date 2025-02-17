@@ -1,0 +1,35 @@
+{
+  "name": "dolphinbat",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "eslint --max-warnings 0 . --fix",
+    "format": "prettier --write . '!./*.{html}' '!./**/*.{html}' --ignore-unknown",
+    "format:check": "prettier --check . '!./*.{html}' '!./**/*.{html}' --ignore-unknown",
+    "check": "bun run lint && bun run format:check"
+  },
+  "lint-staged": {
+    "**/*": [
+      "bun run lint",
+      "bun run format"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.1",
+    "typescript-eslint": "^8.24.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
