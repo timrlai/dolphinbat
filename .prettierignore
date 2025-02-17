@@ -1,0 +1,15 @@
+# Ignore git and other version control files:
+**/.git
+**/.svn
+**/.hg
+
+# Ignore node_modules directory:
+**/node_modules
+
+# Ignore python directories:
+**/.venv/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Ignore all HTML files:
+**/*.html
