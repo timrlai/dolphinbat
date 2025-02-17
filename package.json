@@ -5,8 +5,8 @@
   "scripts": {
     "lint": "eslint --max-warnings 0 .",
     "lint:fix": "eslint --max-warnings 0 . --fix",
-    "format": "prettier --write './*.{ts,mts,js,mjs,cjs,sass,scss,css,vue,json,yml,yaml}' './**/*.{ts,mts,js,mjs,cjs,sass,scss,css,vue,json,yml,yaml}' --ignore-unknown",
-    "format:check": "prettier --check './*.{ts,mts,js,mjs,cjs,sass,scss,css,vue,json,yml,yaml}' './**/*.{ts,mts,js,mjs,cjs,sass,scss,css,vue,json,yml,yaml}' --ignore-unknown",
+    "format": "prettier --write . '!./*.{html}' '!./**/*.{html}' --ignore-unknown",
+    "format:check": "prettier --check . '!./*.{html}' '!./**/*.{html}' --ignore-unknown",
     "check": "bun run lint && bun run format:check"
   },
   "lint-staged": {

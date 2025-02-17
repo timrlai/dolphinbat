@@ -38,7 +38,7 @@ jobs:
         uses: pre-commit/action@v3.0.1
 
   js-linter:
-    name: JavaScript/TypeScript/Bun/HTML/CSS/Sass Linter
+    name: JavaScript/TypeScript/Bun/CSS/Sass Linter
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
