@@ -81,3 +81,21 @@ jobs:
 
       - name: Tear down the Stack
         run: docker compose -f docker-compose.local.yml down
+
+  bun-test:
+    name: Bun Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install JS dependencies with Bun
+        run: bun install
+
+      - name: Run tests
+        run: bun test
