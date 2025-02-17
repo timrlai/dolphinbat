@@ -19,7 +19,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  linter:
+  py-linter:
+    name: Python Linter
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
@@ -29,11 +30,34 @@ jobs:
         uses: astral-sh/setup-uv@v2
         with:
           enable-cache: "true"
-      - name: Install dependencies
+
+      - name: Install Python dependencies with UV
         run: uv sync
+
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.1
+
+  js-linter:
+    name: JavaScript/TypeScript/Bun/HTML/CSS/Sass Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install JS dependencies with Bun
+        run: bun install
+
+      - name: Run ESLint and check Prettier formatting
+        run: bun run check
 
   # With no caching at all the entire ci process takes 3m to complete!
   pytest:
+    name: Python Tests
     runs-on: ubuntu-latest
 
     steps:
