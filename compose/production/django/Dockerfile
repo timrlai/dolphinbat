@@ -1,6 +1,6 @@
 
 # define an alias for the specific python version used in this file.
-FROM docker.io/python:3.12.8-slim-bookworm AS python
+FROM docker.io/python:3.13.2-slim-bookworm AS python
 
 # Python build stage
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS python-build-stage
@@ -37,7 +37,7 @@ RUN pip wheel --wheel-dir /usr/src/app/wheels  \
 
 
 # Python 'run' stage
-FROM docker.io/python:3.12.7-slim-bookworm AS python-run-stage
+FROM docker.io/python:3.13.2-slim-bookworm AS python-run-stage
 
 ARG APP_HOME=/app
 
