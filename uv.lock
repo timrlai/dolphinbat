@@ -309,16 +309,16 @@ wheels = [
 
 [[package]]
 name = "django"
-version = "5.0.12"
+version = "5.1.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "asgiref" },
     { name = "sqlparse" },
     { name = "tzdata", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7d/6a/f5291382f706b61bbb5cee88ca25906699061adc203a777f7ab8ba5c93d2/Django-5.0.12.tar.gz", hash = "sha256:05097ea026cceb2db4db0655ecf77cc96b0753ac6a367280e458e603f6556f53", size = 10636389 }
+sdist = { url = "https://files.pythonhosted.org/packages/6d/e4/901f54ee114a080371a49bd08fa688d301aaffd9751febaf4ae855fc8fcd/Django-5.1.6.tar.gz", hash = "sha256:1e39eafdd1b185e761d9fab7a9f0b9fa00af1b37b25ad980a8aa0dac13535690", size = 10700620 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/00/5b/cadc834acdcafeacf7fc7d4a9e21a7009d2e677ae2e5d0d640845ed0a356/Django-5.0.12-py3-none-any.whl", hash = "sha256:3566604af111f586a1c9d49cb14ba6c607a0ccbbf87f57d98872cd8aae7d48ad", size = 8185877 },
+    { url = "https://files.pythonhosted.org/packages/75/6f/d2c216d00975e2604b10940937b0ba6b2c2d9b3cc0cc633e414ae3f14b2e/Django-5.1.6-py3-none-any.whl", hash = "sha256:8d203400bc2952fbfb287c2bbda630297d654920c72a73cc82a9ad7926feaad5", size = 8277066 },
 ]
 
 [[package]]
@@ -583,7 +583,7 @@ dev = [
 requires-dist = [
     { name = "argon2-cffi", specifier = "==23.1.0" },
     { name = "crispy-bootstrap5", specifier = "==2024.10" },
-    { name = "django", specifier = "==5.0.12" },
+    { name = "django", specifier = "==5.1.6" },
     { name = "django-allauth", extras = ["mfa"], specifier = "==65.4.1" },
     { name = "django-anymail", extras = ["mailgun"], specifier = "==12.0" },
     { name = "django-compressor", specifier = "==4.5.1" },
