@@ -1,0 +1,36 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "noPropertyAccessFromIndexSignature": false
+  },
+  "include": [
+    "index.ts",
+    "dolphinbat/**/*.ts",
+    "dolphinbat/**/*.mts",
+    "vue/src/**/*.ts",
+    "vue/src/**/*.mts",
+    "vue/src/**/*.tsx",
+    "vue/src/**/*.vue",
+    "vite-env.d.ts"
+  ]
+}

@@ -12,6 +12,7 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+dist-ssr/
 downloads/
 eggs/
 .eggs/
@@ -83,6 +84,8 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Runtime data
 pids
@@ -154,6 +157,14 @@ typings/
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+# Other editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Local History for devcontainer
 .devcontainer/bash_history
@@ -275,3 +286,4 @@ dolphinbat/media/
 .env
 .envs/*
 !.envs/.local/
+*.local/
