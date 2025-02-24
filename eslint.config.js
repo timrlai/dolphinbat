@@ -6,6 +6,18 @@ import pluginVue from "eslint-plugin-vue";
 export default [
   { files: ["**/*.{ts,mts,js,mjs,cjs,vue}"] },
   {
+    ignores: [
+      "**/node_modules/",
+      "**/.git/",
+      "**/.svn",
+      "**/.hg",
+      "**/.venv/",
+      "**/.mypy_cache/",
+      "**/.ruff_cache/",
+      "**/dist/",
+    ],
+  },
+  {
     languageOptions: {
       globals: globals.browser,
       parserOptions: {
